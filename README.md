@@ -11,13 +11,13 @@ var defaults = {
 	'type': 'For Profit',
 	'price': 10000,
 	'environment': 'rural'
-}
+};
 
 var config = {
 	'type': 'Non Profit',
 	'name': 'The Saratoga',
 	'city': 'Little Rock',
-}
+};
 
 var merged = merge({}, defaults, config);
 
