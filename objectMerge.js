@@ -1,18 +1,13 @@
-var defaults = {
-	'type': 'For Profit',
-	'price': 10000,
-	'environment': 'rural'
-}
+/*
 
-var config = {
-	'type': 'Non Profit',
-	'name': 'The Saratoga',
-	'city': 'Little Rock',
-}
+Example Usage:
+merge({}, defaults, config)
 
-var merged = merge({}, defaults, config);
+Merge Order:
+{} <= defaults <= config
 
-// create merged object: {} <= defaults <= config
+*/
+
 function merge(target) {
 	var mergeObjects = Array.prototype.slice.call(arguments, 1);
 	return mergeObjects.reduce(function(acc, cur) {
@@ -21,14 +16,4 @@ function merge(target) {
 		});
 		return acc;
 	}, target);
-}
-
-console.log(merged);
-/*
-{
-	'type': 'Non Profit',
-	'price': 10000,
-	'environment': 'rural',
-	'name': 'The Saratoga',
-	'city': 'Little Rock'
 }
