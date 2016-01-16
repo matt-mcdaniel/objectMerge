@@ -12,7 +12,7 @@ var config = {
 
 var merged = merge({}, defaults, config);
 
-// create merge object: {} <= defaults <= config
+// create merged object: {} <= defaults <= config
 function merge(target) {
 	var mergeObjects = Array.prototype.slice.call(arguments, 1);
 	return mergeObjects.reduce(function(acc, cur) {
@@ -24,3 +24,11 @@ function merge(target) {
 }
 
 console.log(merged);
+/*
+{
+	'type': 'Non Profit',
+	'price': 10000,
+	'environment': 'rural',
+	'name': 'The Saratoga',
+	'city': 'Little Rock'
+}
