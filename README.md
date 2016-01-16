@@ -23,8 +23,8 @@ var merged = merge({}, defaults, config);
 
 console.log(merged);
 
-
-{ /* Result
+/* Result */
+{
 	'type': 'Non Profit',
 	'price': 10000,
 	'environment': 'rural',
