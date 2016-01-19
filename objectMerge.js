@@ -1,8 +1,5 @@
 /*
 
-Example Usage:
-merge({}, defaults, config)
-
 Merge Order:
 {} <= defaults <= config
 
@@ -11,8 +8,9 @@ Merge Order:
 function merge(target) {
 	var mergeObjects = Array.prototype.slice.call(arguments, 1);
 	return mergeObjects.reduce(function(acc, cur) {
-		Object.keys(cur).forEach(function(key) {
-			acc[key] = cur[key];
+		Object.getOwnPropertyNames(cur).forEach(function(key) {
+			var propValue = Object.getOwnPropertyDescriptor(cur, key);
+			Object.defineProperty(acc, key, propValue);
 		});
 		return acc;
 	}, target);
